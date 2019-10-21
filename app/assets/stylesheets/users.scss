@@ -1,0 +1,80 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/*profile--------------------------------------------------------*/
+
+
+
+.nav-tabs {
+  margin-top: 150px;
+  margin-right: 150px;
+}
+
+.profile-image{
+  width: 90%;
+  height: auto;
+  margin:0 auto;
+}
+
+.profile-right{
+  float: right;
+  width: 60%;
+}
+
+.profile-left{
+  float: left;
+  width: 30%;
+  height: 50%;
+  text-align:center;
+  margin-top: 50px;
+}
+
+.profile-main{
+  width: 80%;
+  background-color:white;
+  padding: 20px;
+  margin-left: 120px;
+  border-radius: 10px;
+  &:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+  }
+}
+
+.profile-content{
+  margin: 30px;
+  background-color: white;
+  border-bottom: 1px solid #66FFFF;
+}
+
+/*admin----------------------------------------------------------*/
+
+
+/*comments-------------------------------------------------------*/
+
+/*edit-----------------------------------------------------------*/
+
+/*index----------------------------------------------------------*/
+
+
+
+/*likes----------------------------------------------------------*/
+
+/*new------------------------------------------------------------*/
+
+/*show-----------------------------------------------------------*/
+.nav-tabs li.active {
+  border-top: 2px solid #3366FF	;
+}
+
+.nav-tabs li.active a {
+  color: #57575f;
+}
+
+.nav-tabs a {
+  display: inline-block;
+  padding: 16px 30px;
+  color: #afb6bf;
+}

@@ -1,0 +1,101 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*edit-----------------------------------------------------------*/
+
+
+
+/*index----------------------------------------------------------*/
+
+
+
+/*new------------------------------------------------------------*/
+
+
+
+/*show-----------------------------------------------------------*/
+.inner{
+  margin: 10px;
+}
+
+.post-area,.comment-area{
+  width:80%;
+  height: auto;
+}
+
+
+.post-center,.form-area{
+  text-align: center;
+}
+
+.post-content{
+  padding: 80px;
+}
+
+
+.post-img{
+  width: 60%;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+
+.post-left{
+  text-align: left;
+ padding: 25px;
+}
+
+.post-left-item{
+  margin: 10px;
+  display: inline-block;
+}
+
+.comment-area{
+  margin: 0 auto;
+}
+
+
+.btn-wrapper{
+  text-align: right;
+  margin: 20px;
+}
+
+.btn-edit,.btn-destroy{
+  display:inline-block;
+}
+
+.btn-edit{
+  margin-right: 5px;
+}
+
+.comment-destroy-btn{
+  text-align:right;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+
+.post-title{
+  border-bottom:1px solid #66FFFF;
+  width: 60%;
+  margin: 30px auto;
+}
+
+.container{
+background-color:white;
+padding:50px;
+border-radius: 10px;
+margin-bottom: 100px;
+border-radius: 10px;
+}
+
+.text-center{
+  text-align:center;
+  margin-top: 20px;
+}
+
+.comment{
+  margin: 50px 200px 20px;
+  border-bottom:1px solid #66FFFF;
+}

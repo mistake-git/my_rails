@@ -1,0 +1,36 @@
+<div class="profile-left">
+
+ <div class="profile-main">
+<%if @user.image.attached?%>
+ <div class="profile-image">
+  <%= image_tag @user.image,class:"profile-image" %>
+ </div>  
+<%end%>
+
+<div class="profile-content user-name">
+ <h4><%= @user.name %></h4>
+</div>
+
+<div class="profile-content user-email">
+ <%= @user.email %>
+</div>
+
+<div class="profile-content user-introduce">
+ <%= @user.introduce %>
+</div>
+
+<%if @user.id==@current_user.id%>
+ <div class="profile-edit-btn">
+    <%= link_to("編集", "/users/#{@user.id}/edit",class:"btn-sm btn-primary") %>
+ </div>    
+<%end%> 
+</div>
+
+</div>
+
+
+
+
+
+
+

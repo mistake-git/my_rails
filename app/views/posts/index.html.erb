@@ -1,0 +1,43 @@
+<h3 class="page-title">投稿一覧</h3>
+<div class="form">
+ <%= form_tag("/posts/search",:method => "get") do %>
+  <div class="form-group">
+   <%= text_field_tag :search%>
+   <%= submit_tag "検索", :name => nil ,class:"btn-sm btn-info"%>
+  </div>
+<% end %>
+</div>
+
+<ul class="media-list">
+ <% @posts.each do |post| %>
+  <li class="media">
+    <%if post.user.image.attached?%>
+      <div class="media-left">
+       <%= image_tag post.user.image,class:"post-user-img"%>
+      </div>
+     <% end %>
+     
+     <div class="media-body inner">
+     <div class="media-heading">
+      <%= link_to(post.user.name,"/users/#{post.user.id}")%>
+      
+     </div>
+
+      <h4><%=link_to(post.title,"/posts/#{post.id}",class:"post-title")%></h4>
+  
+     
+    <div class="created_at">
+     <%=post.created_at%>
+    </div>
+    
+      <%@likes_count = Like.where(post_id: post.id).count%>
+      <span class="fa fa-star like-btn"></span>
+      
+    <div class="likes-count">
+      <%= @likes_count %>
+      </div>
+     </div>
+  </li>    
+<%end%>
+</ul>
+<%= paginate @posts %>

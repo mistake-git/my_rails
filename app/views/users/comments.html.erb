@@ -1,0 +1,31 @@
+
+<%= render partial: 'profile'%>
+
+<div class="profile-right">
+<ul class="nav nav-tabs">
+  <li class="nav-item"><%= link_to("投稿", "/users/#{@user.id}",class:"nav-link")%></li>
+  <li class="nav-item"><%= link_to("いいねした投稿", "/users/#{@user.id}/likes",class:"nav-link") %></li>
+  <li class="nav-item active"><%= link_to("コメント", "/users/#{@user.id}/comments",class:"nav-link") %></li>
+</ul>
+
+<ul class="media-list profile-media">
+ <% @comments.each do |comment| %>
+  <li class="media">
+  <%post=Post.find_by(id: comment.post_id)%>
+   <%if comment.user.image.attached?%>
+    <div class="media-left">
+     <%=image_tag comment.user.image,class:"post-user-img"%>
+   </div>
+  <% end %>
+   <div class="media-body">
+    <div class="media-heading">
+     <%= link_to(comment.user.name,"/users/#{comment.user.id}")%>
+    </div> 
+    <div class="comment-content">
+     <%= link_to(comment.content, "/posts/#{post.id}") %>
+    </div>
+   </li> 
+ <% end %>
+</ul>
+</div>
+    

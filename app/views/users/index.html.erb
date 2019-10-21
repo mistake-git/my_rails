@@ -1,0 +1,29 @@
+<h3 class="page-title">ユーザー一覧</h3>
+<div class="form">
+<%= form_tag("/users/search",:method => "get") do %>
+  <%= text_field_tag :search%>
+  <%= submit_tag "検索", :name => nil,class:"btn-sm btn-info"%>
+<% end %>
+</div>
+
+  <ul class="media-list">
+   <%@users.each do |user|%>
+    <li class="media user-index">
+     <%if user.image.attached?%>
+      <div class="media-left">
+       <%= image_tag user.image,class:"post-user-img"%>
+      </div>  
+     <%end%>
+      <div class="media-body inner">
+       <div class="media-heading user-index-name">
+        <%=link_to(user.name,"/users/#{user.id}")%>
+       </div>
+       <div class="profile-user-introduce">
+        <%= user.introduce %>
+       </div>
+      </div>
+    </li>
+   <%end%>
+  </ul>
+<%= paginate @users %>
+
