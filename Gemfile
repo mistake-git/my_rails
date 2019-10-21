@@ -72,8 +72,8 @@ gem 'kaminari', '~> 0.17.0'
 # bootstrap
 gem 'bootstrap', '~> 4.1.1'
 
-#jquery
+# jquery
 gem 'jquery-rails'
 
-#メッセージ日本語化
+# メッセージ日本語化
 gem 'rails-i18n'
