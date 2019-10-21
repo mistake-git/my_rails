@@ -50,20 +50,19 @@ class PostsController < ApplicationController
     @post = Post.find_by(id: params[:id])
     if @post.update(
       content: params[:post][:content],
-      title: params[:post][:title],
+      title: params[:post][:title]
     )
-       if params[:post][:image]
+      if params[:post][:image]
         @post.image.purge
         @post.image.attach(params[:post][:image])
-       end
+      end
       flash[:notice] = '投稿を編集しました'
       redirect_to("/posts/#{@post.id}")
     else
       render('posts/edit')
     end
   end
-  
-  
+
   def destroy
     @post = Post.find_by(id: params[:id])
     @post.destroy
