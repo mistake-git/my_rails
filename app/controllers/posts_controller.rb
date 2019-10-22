@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.page(params[:page]).per(PER).order(created_at: :desc)
+    @user=@current_user
   end
 
   def search

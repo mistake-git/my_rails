@@ -1,7 +1,7 @@
 <h3 class="text-center mt-5">アカウント編集</h3>
 
 <div class="container pb-5">
-  <%= form_with scope: :user, url: users_update_path(@user), method: :patch  do |form| %>
+  <%= form_with scope: :user, url: users_update_path(@user), local: true ,method: :patch  do |form| %>
   <div class="form-group">
   <p>プロフィール画像選択</p> 
   <%= form.file_field :image,class:"form-control"%>

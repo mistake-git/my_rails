@@ -8,9 +8,12 @@
 
 /*index----------------------------------------------------------*/
 .post-index{
-  width:80%;
+  width: 80%;
 }
-
+.post-media-img{
+  width: 100px;
+  height: auto;
+}
 
 /*new------------------------------------------------------------*/
 
@@ -31,7 +34,7 @@
   text-align: center;
 }
 
-.post-show-title{
+.post-title{
   color:black;
   text-decoration:none;
 }

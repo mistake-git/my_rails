@@ -1,6 +1,6 @@
 <h3 class="text-center mt-5">投稿一覧</h3>
 
-<div class="search-form  float-right mt-3">
+<div class="search-form">
  <%= form_tag("/posts/search",:method => "get") do %>
  <div class="form-group search-item">
    <%= text_field_tag :search ,"" ,{class: "form-control"}%>
@@ -13,21 +13,17 @@
 
 <ul class="media-list">
  <% @posts.each do |post| %>
-  <li class="media post-index float-right mr-3">
+  <li class="media">
     <%if post.user.image.attached?%>
       <div class="media-left">
        <%= image_tag post.user.image,class:"post-user-img"%>
       </div>
-     <% end %>
+     <%end%> 
      <div class="media-body inner">
      <div class="media-heading">
       <%= link_to(post.user.name,"/users/#{post.user.id}")%>
-      
      </div>
-
       <h4><%=link_to(post.title,"/posts/#{post.id}",class:"post-title")%></h4>
-  
-     
     <div class="created_at">
      <%=post.created_at%>
     </div>
@@ -39,6 +35,11 @@
       <%= @likes_count %>
       </div>
      </div>
+     <%if post.image.attached?%>
+      <div class="media-right mt-4 mr-5">
+       <%= image_tag post.image,class:"post-media-img"%>
+      </div>
+     <%end%>
   </li>    
 <%end%>
 </ul>
