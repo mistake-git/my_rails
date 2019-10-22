@@ -41,7 +41,7 @@ li{
 .flash {
   padding: 10px 0;
   color: white;
-  background: #33FFFF;
+  background:#FFA500;
   text-align: center;
   position: absolute;
   top: 58px;
@@ -93,6 +93,29 @@ padding-left: 15px;
 form{
   text-align:center;
 }
+/*検索フォーム---------------------------------------------------------*/
+.search-form{
+  margin-right: 33%;
+}
+
+.search-item{
+  display: inline-block;
+}
+
+/*いいねボタン---------------------------------------------------------*/
+
+.like-btn{
+  color: #A7F1FF;
+}
+
+.like-btn-unlike{
+  color:black;
+  opacity: 0.4;
+}
+
+
+/*投稿-------------------------------------------------------------------*/
+
 
 .post{
   margin: 50px 200px 0;
@@ -105,14 +128,6 @@ form{
   }
 }
 
-.like-btn{
-  color: #A7F1FF;
-}
-
-.like-btn-unlike{
-  color:black;
-  opacity: 0.4;
-}
 
 .created_at,.likes-count{
   display: inline;

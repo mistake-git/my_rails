@@ -1,11 +1,16 @@
 <h3 class="text-center mt-5">ユーザー一覧</h3>
 
-<div class="form form-group">
+<div class="search-form float-right mt-3" >
 <%= form_tag("/users/search",:method => "get") do %>
-  <%= text_field_tag :search%>
+<div class="form-group search-item">
+  <%= text_field_tag :search,"" ,{class: "form-control"}%>
+</div>  
+<div class="search-item">
   <%= submit_tag "検索", :name => nil,class:"btn-sm btn-info"%>
+  </div>
 <% end %>
 </div>
+
 
   <ul class="media-list">
    <%@users.each do |user|%>

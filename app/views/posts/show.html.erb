@@ -86,7 +86,7 @@
  <div class="form comment-form">
  <%= form_tag("/posts/#{@post.id}/comments",{method:"post"}) do%>
  <div class="form-group">
-  <input name="content" class="form-control">
+  <input name="content" class="form-control" required>
   </div>
   <input type="submit" value="コメントする" class="btn-sm btn-primary">
  <% end %>
