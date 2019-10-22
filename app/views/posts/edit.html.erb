@@ -1,5 +1,5 @@
-<h3 class="page-title">投稿編集</h3>
-<div class="container">
+<h3 class="text-center mt-5">投稿編集</h3>
+<div class="container pb-5">
 <%= form_with scope: :post,  url: posts_update_path(@post), method: :patch do |form| %>
  <% @post.errors.full_messages.each do |message| %>
  <div class="error-message">

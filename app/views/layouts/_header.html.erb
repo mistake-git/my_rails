@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar">
+   <%=link_to("Enbiginneer!","/",class:"navbar-brand")%>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse navbar-right" id="navbarText">
+    <ul class="navbar-nav mr-auto">　
+    <li>
+     <span class="navbar-text">
+     ~ For all Beginner engineer~
+    </span>
+    </li>
+    </ul>
+    <ul class="navbar-nav">
+      <% if @current_user%>
+       <li class="nav-item"><%=link_to(@current_user.name,"/users/#{@current_user.id}",class:"nav-link")%></li>
+       <li class="nav-item"><%=link_to("新規投稿","/posts/new",class:"nav-link")%></li>
+       <li class="nav-item"><%=link_to("投稿一覧","/posts/index",class:"nav-link")%></li> 
+       <li class="nav-item"><%=link_to("ユーザー一覧","/users/index",class:"nav-link")%></li>
+       <li class="nav-item"><%=link_to("ログアウト","/logout",{method: :post, class:"nav-link"})%></li>
+       <%if @current_user.admin?%>
+        <li class="nav-item"><%=link_to("サイト管理","/admin",class:"nav-link")%></li>
+       <%end%>
+       <%else%>
+       <li class="nav-item"><%=link_to("Enbignnerとは","/about",class:"nav-link")%></li> 
+       <li class="nav-item"><%=link_to("ユーザー新規作成","/signup",class:"nav-link")%></li>
+       <li class="nav-item"><%=link_to("ログイン","/login",class:"nav-link")%></li>
+       <%end%>
+    </ul>
+  </div>
+</nav>

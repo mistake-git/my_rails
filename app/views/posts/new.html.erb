@@ -1,5 +1,5 @@
-<h3 class="page-title">投稿する</h3>
-<div class="container">
+<h3 class="text-center mt-5">投稿する</h3>
+<div class="container pb-5">
 <%= form_with url: posts_create_path  do |form| %>
 <% @post.errors.full_messages.each do |message| %>
 <div class="error-message">
@@ -7,7 +7,7 @@
       </div>
 <% end %>
 
-<div class="form-group">
+<div class="form-group ">
 <p>画像選択</p>
   <%= form.file_field :image ,class:"form-control" %>
   </div>

@@ -7,7 +7,9 @@
 
 
 /*index----------------------------------------------------------*/
-
+.post-index{
+  width:80%;
+}
 
 
 /*new------------------------------------------------------------*/
@@ -28,6 +30,12 @@
 .post-center,.form-area{
   text-align: center;
 }
+
+.post-show-title{
+  color:black;
+  text-decoration:none;
+}
+
 
 .post-content{
   padding: 80px;
@@ -76,15 +84,8 @@
 }
 
 
-.post-title{
-  border-bottom:1px solid #66FFFF;
-  width: 60%;
-  margin: 30px auto;
-}
-
 .container{
 background-color:white;
-padding:50px;
 border-radius: 10px;
 margin-bottom: 100px;
 border-radius: 10px;
@@ -98,4 +99,10 @@ border-radius: 10px;
 .comment{
   margin: 50px 200px 20px;
   border-bottom:1px solid #66FFFF;
+}
+
+.comment-form{
+  width: 30%;
+  padding-top: 120px;
+  margin: 100px auto;
 }
