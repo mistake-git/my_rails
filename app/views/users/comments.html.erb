@@ -3,9 +3,9 @@
 
 <div class="profile-right">
 <ul class="nav nav-tabs">
-  <li class="nav-item"><%= link_to("投稿", "/users/#{@user.id}",class:"nav-link")%></li>
+  <li class="nav-item active"><%= link_to("投稿", "/users/#{@user.id}",class:"nav-link")%></li>
   <li class="nav-item"><%= link_to("いいねした投稿", "/users/#{@user.id}/likes",class:"nav-link") %></li>
-  <li class="nav-item active"><%= link_to("コメント", "/users/#{@user.id}/comments",class:"nav-link") %></li>
+  <li class="nav-item"><%= link_to("コメント", "/users/#{@user.id}/comments",class:"nav-link") %></li>
 </ul>
 
 <ul class="media-list profile-media">

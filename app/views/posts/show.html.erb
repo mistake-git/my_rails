@@ -14,18 +14,6 @@
  <div class="created_at post-left-item">
    <%=@post.created_at%>
    </div>
-   <div class="post-left-item">
-<% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
- <%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
-  <span class="fa fa-star like-btn"></span>
- <% end %>
-<% else %>
- <%= link_to("/likes/#{@post.id}/create", {method: "post"}) do %>
-  <span class="fa fa-star like-btn-unlike"></span>
- <%end%>
-<% end %>
-  <%= @likes_count %>
- </div>
  </div>
  
  <div class="post-center">
@@ -39,6 +27,18 @@
   <div class="post-content">
     <%=@post.content%>
   </div>
+     <div class="float-left ml-5">
+<% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
+ <%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
+  <span class="fa fa-star like-btn"></span>
+ <% end %>
+<% else %>
+ <%= link_to("/likes/#{@post.id}/create", {method: "post"}) do %>
+  <span class="fa fa-star like-btn-unlike"></span>
+ <%end%>
+<% end %>
+  <%= @likes_count %>
+ </div>
   
  <%if @user.id==@current_user.id%>
  <div class="btn-wrapper">

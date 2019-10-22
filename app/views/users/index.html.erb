@@ -1,5 +1,4 @@
 <h3 class="text-center mt-5">ユーザー一覧</h3>
-
 <div class="search-form float-right mt-3" >
 <%= form_tag("/users/search",:method => "get") do %>
 <div class="form-group search-item">
@@ -10,7 +9,6 @@
   </div>
 <% end %>
 </div>
-
 
   <ul class="media-list">
    <%@users.each do |user|%>
@@ -32,4 +30,5 @@
    <%end%>
   </ul>
 <%= paginate @users %>
+
 

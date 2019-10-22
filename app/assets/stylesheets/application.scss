@@ -69,6 +69,11 @@ nav{
 .navbar-brand,.navbar-text, .nav-link{
   color: white;
 }
+
+.nav-bar-img{
+  width: 40px;
+  height: 40px;
+}
 /*フッター--------------------------------------------------------------*/
 .footer {
 position: absolute;
@@ -103,9 +108,10 @@ form{
 }
 
 /*いいねボタン---------------------------------------------------------*/
-
 .like-btn{
   color: #A7F1FF;
+  width: 15px;
+  height: 15px;
 }
 
 .like-btn-unlike{
@@ -152,17 +158,3 @@ form{
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
