@@ -56,7 +56,7 @@ li{
 /*エラーメッセージ-------------------------------------------------------*/
 .error-message{
   color: red;
-  margin: 5px auto;
+  text-align:center;
 }
 
 /*ナビゲーションバー----------------------------------------------------*/
@@ -72,7 +72,7 @@ nav{
   color: white;
 }
 
-.nav-bar-img{
+.nav-link-img{
   width: 40px;
   height: 40px;
 }
@@ -101,10 +101,6 @@ form{
   text-align:center;
 }
 /*検索フォーム---------------------------------------------------------*/
-.search-form{
-  margin: 30px auto;
-}
-
 .search-item{
   display: inline-block;
 }
@@ -145,10 +141,6 @@ form{
 
 .media-list{
     width: 80%;
-    float: right;
-    box-sizing: border-box;
-    margin-top: 30px;
-    margin-right: 130px;
 }
 
 .media{

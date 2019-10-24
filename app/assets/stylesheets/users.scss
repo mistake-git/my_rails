@@ -8,8 +8,7 @@
 
 
 .nav-tabs {
-  margin-top: 150px;
-  margin-right: 150px;
+  margin-top: 100px;
 }
 
 .nav-tabs li.active {
@@ -26,38 +25,19 @@
   color: #afb6bf;
 }
 
+
 .profile-image{
-  width: 90%;
+  width: 70%;
   height: auto;
   margin:0 auto;
 }
 
-.index-profile-image{
-  width: 150px;
-  height: 150px;
-}
-
-
-.profile-right{
-  float: right;
-  width: 60%;
-}
-
-.profile-left{
-  float: left;
-  width: 30%;
-  text-align:center;
-  margin-top: 50px;
-}
-
-
-
 
 .profile-main{
-  width: 80%;
+  width: 70%;
   background-color:white;
   padding: 20px;
-  margin-left: 100px;
+  margin: 50px auto;
   border-radius: 10px;
   &:hover{
     transform: translateY(-2px);
