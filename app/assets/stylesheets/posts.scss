@@ -2,11 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/*edit-----------------------------------------------------------*/
-
-
-
-/*index----------------------------------------------------------*/
 .post-index{
   width: 80%;
 }
@@ -14,10 +9,6 @@
   width: 100px;
   height: auto;
 }
-
-/*new------------------------------------------------------------*/
-
-
 
 /*show-----------------------------------------------------------*/
 .inner{
@@ -39,6 +30,11 @@
   text-decoration:none;
 }
 
+.post-show-title{
+  border-bottom:1px solid #66FFFF;
+  width: 50%;
+  margin: 20px auto;
+}
 
 .post-content{
   padding: 80px;
@@ -94,17 +90,11 @@ margin-bottom: 100px;
 border-radius: 10px;
 }
 
-.text-center{
-  text-align:center;
-  margin-top: 20px;
-}
-
 .comment{
   margin: 50px 200px 20px;
   border-bottom:1px solid #66FFFF;
 }
 .comment-form{
   width: 20%;
-  padding-top: 120px;
   margin: 100px auto;
 }
