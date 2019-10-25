@@ -15,7 +15,7 @@
     <li class="media">
       <%if user.image.attached?%>
         <div class="media-left">
-          <%= image_tag user.image,class:"post-user-img"%>
+          <%=link_to(image_tag(user.image,class:"post-user-img"),"/users/#{user.id}")%>
         </div>
       <%end%>
       <div class="media-body inner">

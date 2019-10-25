@@ -1,24 +1,36 @@
 # README
+・基本的な機能のあるメディア系のWEBサービスです。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+機能一覧
 
-Things you may want to cover:
+ユーザー登録機能
+ユーザー編集機能
+記事一覧
+ユーザー一覧
+記事投稿機能
+記事編集機能
+記事削除機能
+ページネーション
+画像投稿機能
+いいね
+コメント
+記事検索機能
+ユーザー検索機能
 
-* Ruby version
+これからは
+フォロー機能
+人気記事表示機能
+人気ユーザー表示機能
 
-* System dependencies
+など追加していきたいと考えています。
 
-* Configuration
+使用技術
 
-* Database creation
+HTML CSS
+Bootstrap
+JQuery
+Ruby on rails 
 
-* Database initialization
+です。よろしくお願いいたします。
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
