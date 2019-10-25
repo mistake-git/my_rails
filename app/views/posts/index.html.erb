@@ -11,7 +11,7 @@
     <% end %>
   </div>
   
-  <div>
+  <%=link_to(posts_show_path(@posts))do%>
     <ul class="media-list mx-auto">
       <% @posts.each do |post| %>
         <li class="media">
@@ -43,4 +43,4 @@
       <%end%>
     </ul>
     <%= paginate @posts %>
-  </div>
+ <%end%>
