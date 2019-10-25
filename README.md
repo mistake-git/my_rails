@@ -31,6 +31,6 @@ Bootstrap
 JQuery
 Ruby on rails 
 
-です。よろしくお願いいたします。
+以上です。よろしくお願いいたします。
 
 
