@@ -45,14 +45,17 @@
     <% end %>
   </div>
 </div>
+
+
+
 <p class=comment>コメント</p>
 <div class="comment-area">
-  <ul class ="media-list">
+  <ul class ="media-list mx-auto">
     <%@comments.each do |comment|%>
       <li class="media">
         <%if comment.user.image.attached?%>
           <div class="media-left">
-            <%= image_tag comment.user.image,class:"post-user-img"%>
+            <%=link_to(image_tag(comment.user.image,class:"post-user-img"),"/users/#{comment.user.id}")%>
           </div>
         <% end %>
         <div class="media-body inner">

@@ -15,7 +15,7 @@
         <%post=Post.find_by(id: comment.post_id)%>
         <%if comment.user.image.attached?%>
           <div class="media-left">
-            <%=image_tag comment.user.image,class:"post-user-img"%>
+            <%=link_to(image_tag(comment.user.image,class:"post-user-img"),"/users/#{comment.user.id}")%>
           </div>
         <% end %>
         <div class="media-body">
