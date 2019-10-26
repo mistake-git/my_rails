@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get 'login' => 'users#login_form'
   get 'users/:id/likes' => 'users#likes'
   get 'users/:id/comments' => 'users#comments'
-
+  delete '/users/:id/destroy' => 'users#destroy'
   
   get '/admin' => 'users#admin'
   get '/posts/index' => 'posts#index'

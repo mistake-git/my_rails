@@ -50,7 +50,7 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     
     if @user.email == 'test@gmail.com'
-    flash[:notice] = 'テストユーザはアドレスを更新できません'
+    flash[:notice] = 'テストユーザーはアドレスを更新できません'
     return render('users/edit')
     end
     
@@ -68,6 +68,18 @@ class UsersController < ApplicationController
     else
       render('users/edit')
     end
+  end
+  
+  def destroy
+    @user = User.find_by(id: params[:id])
+    if @user.email == 'test@gmail.com'
+    flash[:notice] = 'テストユーザーはユーザーを削除できません'
+    return redirect_to("/users/#{@user.id}")
+    
+    end
+    @user.destroy
+    flash[:notice] = 'ユーザーを削除しました'
+    redirect_to('/')
   end
 
   def login_form; end
