@@ -48,12 +48,6 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find_by(id: params[:id])
-    
-    if @user.email == 'test@gmail.com'
-    flash[:notice] = 'テストユーザーはアドレスを更新できません'
-    return render('users/edit')
-    end
-    
     if @user.update(
       name: params[:user][:name],
       email: params[:user][:email],

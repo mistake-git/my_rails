@@ -6,6 +6,7 @@
         <%= message %>
       </div>
     <% end %>
+    <div class="form-wrapper">
     <div class="form-group ">
       <p>画像選択</p>
       <%= form.file_field :image ,class:"form-control" %>
@@ -20,4 +21,5 @@
     </div>
     <%= form.submit value="投稿する",class:"btn btn-primary"%>
   <% end %>
+</div>
 </div>
