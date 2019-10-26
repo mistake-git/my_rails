@@ -67,7 +67,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bcrypt'
 
 # ページネーション
-gem 'kaminari', '~> 0.17.0'
+gem 'kaminari', '~> 1.1', '>= 1.1.1'
 
 # bootstrap
 gem 'bootstrap', '~> 4.1.1'
