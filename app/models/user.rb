@@ -5,6 +5,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   has_secure_password
   has_one_attached :image
+  has_many :posts, dependent: :destroy
 
   def self.search(search)
     if search
