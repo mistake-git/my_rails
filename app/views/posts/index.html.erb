@@ -11,7 +11,7 @@
     <% end %>
   </div>
   
-  <%=link_to(posts_show_path(@posts))do%>
+  <%=link_to (posts_show_path(@posts)) do%>
     <ul class="media-list mx-auto">
       <% @posts.each do |post| %>
         <li class="media">
@@ -28,9 +28,9 @@
             <div class="created_at">
               <%=post.created_at%>
             </div>
-            <%@likes_count = Like.where(post_id: post.id).count%>
             <span class="fa fa-star like-btn"></span>
             <div class="likes-count">
+              <%@likes_count = Like.where(post_id: post.id).count%>
               <%= @likes_count %>
             </div>
           </div>

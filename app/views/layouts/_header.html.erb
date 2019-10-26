@@ -17,17 +17,17 @@
           <li class="nav-item"><%=link_to(image_tag(@current_user.image,class:"nav-link-img"),"/users/#{@current_user.id}")%></li>
         <% end %>
         <li class="nav-item"><%=link_to(@current_user.name,"/users/#{@current_user.id}",class:"nav-link")%></li>
-        <li class="nav-item"><%=link_to("新規投稿","/posts/new",class:"nav-link")%></li>
-        <li class="nav-item"><%=link_to("投稿一覧","/posts/index",class:"nav-link")%></li>
-        <li class="nav-item"><%=link_to("ユーザー一覧","/users/index",class:"nav-link")%></li>
-        <li class="nav-item"><%=link_to("ログアウト","/logout",{method: :post, class:"nav-link"})%></li>
+        <li class="nav-item"><span class="fa fa-edit"></span><%=link_to("新規投稿","/posts/new",class:"nav-link")%></li>
+        <li class="nav-item"><span class="fa fa-list"></span><%=link_to("投稿一覧","/posts/index",class:"nav-link")%></li>
+        <li class="nav-item"><span class="fa fa-users"></span><%=link_to("ユーザー一覧","/users/index",class:"nav-link")%></li>
+        <li class="nav-item"><span class="fa fa-sign-out"></span><%=link_to("ログアウト","/logout",{method: :post, class:"nav-link"})%></li>
         <%if @current_user.admin?%>
           <li class="nav-item"><%=link_to("サイト管理","/admin",class:"nav-link")%></li>
         <%end%>
       <%else%>
-        <li class="nav-item"><%=link_to("ABOUT","/about",class:"nav-link")%></li>
-        <li class="nav-item"><%=link_to("ユーザー新規作成","/signup",class:"nav-link")%></li>
-        <li class="nav-item"><%=link_to("ログイン","/login",class:"nav-link")%></li>
+        <li class="nav-item"><span class="fa fa-info-circle"></span><%=link_to("ABOUT","/about",class:"nav-link")%></li>
+        <li class="nav-item"><span class="fa fa-user"></span><%=link_to("ユーザー新規作成","/signup",class:"nav-link")%></li>
+        <li class="nav-item"><span class="fa fa-sign-in"></span><%=link_to("ログイン","/login",class:"nav-link")%></li>
       <%end%>
     </ul>
   </div>

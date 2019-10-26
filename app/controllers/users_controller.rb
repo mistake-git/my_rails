@@ -48,6 +48,12 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find_by(id: params[:id])
+    
+    if @user.email == 'test@gmail.com'
+    flash[:notice] = 'テストユーザはアドレスを更新できません'
+    return render('users/edit')
+    end
+    
     if @user.update(
       name: params[:user][:name],
       email: params[:user][:email],
@@ -68,8 +74,7 @@ class UsersController < ApplicationController
 
   def login
     @user = User.find_by(email: params[:email])
-    if # frozen_string_literal: true
-@user&.authenticate(params[:password])
+    if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       flash[:notice] = 'ログインしました'
       redirect_to('/posts/index')
