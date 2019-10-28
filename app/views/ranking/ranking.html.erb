@@ -1,0 +1,43 @@
+  <h3 class="text-center mt-5">ランキング</h3>
+  
+  <div class="row">
+  <div class="post-ranking  col-6">
+  <div class="text-center">投稿ランキング</div>
+  <ul class=" mt-3">
+   <%@all_posts_ranks.each do|post|%>
+<li class="media">
+          <%if post.user.image.attached?%>
+            <div class="media-left">
+              <%=link_to(image_tag(post.user.image,class:"post-user-img"),"/users/#{post.user.id}")%>
+            </div>
+          <%end%>
+          <div class="media-body inner">
+            <div class="media-heading">
+              <%= link_to(post.user.name,"/users/#{post.user.id}")%>
+            </div>
+            <h4><%=link_to(post.title,"/posts/#{post.id}",class:"post-title")%></h4>
+            <div class="created_at">
+              <%=post.created_at%>
+            </div>
+            <span class="fa fa-star like-btn"></span>
+            <div class="likes-count">
+              <%@likes_count = Like.where(post_id: post.id).count%>
+              <%= @likes_count %>
+            </div>
+          </div>
+          <%if post.image.attached?%>
+            <div class="media-right mt-4 mr-5">
+              <%= image_tag post.image,class:"post-media-img"%>
+            </div>
+          <%end%>
+        </li>
+<%end%>
+</ul>
+</div>
+
+
+<div class="user-ranking col-6">
+  <div class="text-center">ユーザーランキング</div>
+</div>
+
+</div>

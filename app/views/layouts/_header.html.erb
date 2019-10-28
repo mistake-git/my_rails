@@ -20,6 +20,11 @@
           <%=link_to(@current_user.name,"/users/#{@current_user.id}",class:"nav-link")%>
         </li>
         <li class="nav-item">
+          <%=link_to("/ranking",class:"nav-link") do%>
+          <span class="fas fa-medal"></span>ランキング
+          <%end%>
+        </li>
+        <li class="nav-item">
           <%=link_to("/posts/new",class:"nav-link") do%>
           <span class="fa fa-edit"></span>新規投稿
           <%end%>
