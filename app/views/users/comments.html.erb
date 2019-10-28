@@ -32,7 +32,7 @@
             <%= link_to(comment.user.name,"/users/#{comment.user.id}")%>
           </div>
           <div class="comment-content">
-            <%= link_to(comment.content, "/posts/#{post.id}") %>
+            <%= link_to(comment.content, "/posts/#{post.id}",class:"comment-content") %>
           </div>
         </div>
       </li>
