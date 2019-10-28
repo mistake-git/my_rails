@@ -20,10 +20,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
-     #投稿数、いいね数、コメント数
-    @user_posts_count=Post.where(user_id: @user.id).count
-    @user_likes_post_count=Like.where(user_id: @user.id).count
-    @user_comments_count=Comment.where(user_id: @user.id).count
   end
 
   def new
@@ -105,17 +101,11 @@ class UsersController < ApplicationController
   def likes
     @user = User.find_by(id: params[:id])
     @likes = Like.where(user_id: @user.id)
-    @user_posts_count=Post.where(user_id: @user.id).count
-    @user_likes_post_count=Like.where(user_id: @user.id).count
-    @user_comments_count=Comment.where(user_id: @user.id).count
   end
 
   def comments
     @user = User.find_by(id: params[:id])
     @comments = Comment.where(user_id: @user.id)
-     @user_posts_count=Post.where(user_id: @user.id).count
-    @user_likes_post_count=Like.where(user_id: @user.id).count
-    @user_comments_count=Comment.where(user_id: @user.id).count
   end
 
   def ensure_correct_user

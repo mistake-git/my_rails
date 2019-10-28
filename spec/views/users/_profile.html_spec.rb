@@ -16,9 +16,9 @@
     <%if @user.id==@current_user.id%>
       <div class="ml-1 mr-1">
         <%= link_to("編集", "/users/#{@user.id}/edit",class:"btn-sm btn-primary") %>
-         <%= link_to("削除", "/users/#{@user.id}/destroy",method:"delete",class:"btn-sm btn-danger")%>
+        <%= link_to("削除", "/users/#{@user.id}/destroy",method:"delete",class:"btn-sm btn-danger")%>
+        <p class="mt-3">※削除するとユーザーに関する全てのデータが削除されます</p>
       </div>
     <%end%>
   </div>
-
 
