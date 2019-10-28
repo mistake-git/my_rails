@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   patch '/posts/:id/update' => 'posts#update', as: 'posts_update'
   delete '/posts/:id/destroy' => 'posts#destroy'
  
+  get '/ranking' => 'ranking#ranking'
 
   get '/' => 'home#top'
   get 'about' => 'home#about'
