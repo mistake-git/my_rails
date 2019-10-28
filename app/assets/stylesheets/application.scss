@@ -49,6 +49,11 @@ li{
    margin: 0 auto;
  }
  
+ .pagenation{
+   margin-left: 45%;/*margin-autoが効かない*/
+   margin-top: 3%;
+   text-align:center;
+ }
 
 /*フラッシュ-----------------------------------------------------------*/
 .flash {
