@@ -2,3 +2,45 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/*トップページ-------------------------------------------------------------------*/
+.top-page{
+   background-image: url("/assets/top-image.jpg");
+   background-size:cover;
+   color:white;
+}
+
+.top-page{
+  h1{
+ opacity:0.7;
+ font-size:45px;
+ letter-spacing:2px;
+  }
+  
+  p{
+    opacity: 0.8;
+  }
+  
+  .btn{
+  opacity: 0.9;
+  }
+  
+  h4{
+    opacity: 0.8;
+  }
+}
+
+/*アバウトページ-------------------------------------------------------------------*/
+.about-page{
+  background-image: url("/assets/top-image.jpg");
+  background-size:cover;
+  color:white;
+  
+   .btn{
+  opacity: 0.9;
+  }
+}
+
+/*ログイン-------------------------------------------------------------------*/
+.ignore-form{
+  display:none;
+}

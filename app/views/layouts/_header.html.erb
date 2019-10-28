@@ -21,7 +21,7 @@
         </li>
         <li class="nav-item">
           <%=link_to("/ranking",class:"nav-link") do%>
-          <span class="fas fa-medal"></span>ランキング
+          <span class="fas fa-crown"></span>ランキング
           <%end%>
         </li>
         <li class="nav-item">
@@ -41,7 +41,7 @@
         </li>
         <li class="nav-item">
           <%=link_to("/logout",{method: :post, class:"nav-link"}) do%>
-            <span class="fa fa-sign-out"></span>ログアウト
+            <span class="fas fa-sign-out-alt"></span>ログアウト
             <%end%>
           </li>
         <%if @current_user.admin?%>
@@ -60,7 +60,7 @@
         </li>
         <li class="nav-item">
           <%=link_to("/login",class:"nav-link") do%>
-          <span class="fa fa-sign-in"></span>ログイン
+          <span class="fas fa-sign-in-alt"></span>ログイン
           <%end%>
         </li>
       <%end%>
