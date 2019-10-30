@@ -126,4 +126,9 @@ class UsersController < ApplicationController
   end
 
   def admin; end
+    
+  def password_reset_form
+  end
+    
+    
 end

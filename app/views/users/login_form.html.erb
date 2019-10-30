@@ -16,6 +16,9 @@
       <input name="password" class="form-control" type="password" value="<%=@password%>">
     </div>
     <input type="submit" class=" btn btn-primary" value="ログイン">
+    <div class="mt-3">
+      <%=link_to("パスワードを忘れた方はこちら","/password_reset_form")%>
+    </div>
     </div>
   <%end%>
 </div>

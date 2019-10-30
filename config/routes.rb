@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get 'users/:id/comments' => 'users#comments'
   delete '/users/:id/destroy' => 'users#destroy'
   get '/admin' => 'users#admin'
+  get '/password_reset_form' => 'users#password_reset_form'
   
   get '/posts/index' => 'posts#index'
   get '/posts/search' => 'posts#search'
