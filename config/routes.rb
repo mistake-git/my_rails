@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'sessions/new'
   post 'likes/:post_id/create' => 'likes#create'
   post 'likes/:post_id/destroy' => 'likes#destroy'
 
@@ -20,8 +21,8 @@ Rails.application.routes.draw do
   get 'users/:id/likes' => 'users#likes'
   get 'users/:id/comments' => 'users#comments'
   delete '/users/:id/destroy' => 'users#destroy'
-  
   get '/admin' => 'users#admin'
+  
   get '/posts/index' => 'posts#index'
   get '/posts/search' => 'posts#search'
   get '/posts/new' => 'posts#new'
@@ -32,7 +33,6 @@ Rails.application.routes.draw do
   delete '/posts/:id/destroy' => 'posts#destroy'
  
   get '/ranking' => 'ranking#ranking'
-
   get '/' => 'home#top'
   get 'about' => 'home#about'
 end
