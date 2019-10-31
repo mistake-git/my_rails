@@ -125,7 +125,9 @@ class UsersController < ApplicationController
     end
   end
 
-  def admin; end
+  def admin
+     @users = User.page(params[:page]).per(PER)
+  end
     
   def password_reset_form
   end
