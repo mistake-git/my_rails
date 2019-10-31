@@ -70,11 +70,6 @@ class UsersController < ApplicationController
   
   def destroy
     @user = User.find_by(id: params[:id])
-    if @user.email == 'test@gmail.com'
-    flash[:notice] = 'テストユーザーはユーザーを削除できません'
-    return redirect_to("/users/#{@user.id}")
-    
-    end
     @user.destroy
     flash[:notice] = 'ユーザーを削除しました'
     redirect_to('/')
