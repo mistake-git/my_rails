@@ -1,3 +1,4 @@
+
 <h3 class="text-center mt-5">ログイン</h3>
 <% if @error_message%>
   <div class="error-message">
@@ -14,6 +15,10 @@
     <div class="form-group">
       <p class="text-center">パスワード</p>
       <input name="password" class="form-control" type="password" value="<%=@password%>">
+    </div>
+    <div class="user-remember">
+    <p class="user-remember-item">次回から自動でログインする</p>
+    <input name="remember_me" type="checkbox" class="user-remember-item">
     </div>
     <input type="submit" class=" btn btn-primary" value="ログイン">
     <div class="mt-3">

@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'sessions/new'
+  get    '/login_form' => 'sessions#new'
+  post   '/login' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
+
   post 'likes/:post_id/create' => 'likes#create'
   post 'likes/:post_id/destroy' => 'likes#destroy'
 
@@ -15,9 +18,6 @@ Rails.application.routes.draw do
   get '/users/search' => 'users#search'
   get 'users/index' => 'users#index'
   get 'users/:id' => 'users#show', as: 'users_show'
-  post 'login' => 'users#login',as:'login_path'
-  post 'logout' => 'users#logout'
-  get 'login' => 'users#login_form'
   get 'users/:id/likes' => 'users#likes'
   get 'users/:id/comments' => 'users#comments'
   delete '/users/:id/destroy' => 'users#destroy'
