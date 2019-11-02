@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 11) do
+ActiveRecord::Schema.define(version: 12) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -52,6 +52,6 @@ ActiveRecord::Schema.define(version: 11) do
 #   Unknown type 'strings' for column 'title'
 
 # Could not dump table "users" because of following StandardError
-#   Unknown type 'strings' for column 'introduce'
+#   Unknown type '' for column 'introduce'
 
 end

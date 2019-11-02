@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   PER = 8
 
   def index
-    @users = User.page(params[:page]).per(PER)
+    @users = User.where(activated: true).page(page: params[:page]).per(PER)
     
   end
 
@@ -21,6 +21,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(id: params[:id])
      #投稿数、いいね数、コメント数
+    redirect_to("/posts/index") and return unless @user.activated?
     @user_posts_count=Post.where(user_id: @user.id).count
     @user_likes_post_count=Like.where(user_id: @user.id).count
     @user_comments_count=Comment.where(user_id: @user.id).count
@@ -38,9 +39,10 @@ class UsersController < ApplicationController
       password_confirmation: params[:password]
     )
     if @user.save
-      session[:user_id] = @user.id
-      flash[:notice] = 'ユーザー登録が完了しました'
-      redirect_to("/users/#{@user.id}")
+      @user.send_activation_email
+      UserMailer.account_activation(@user).deliver_now
+      flash[:notice] = "アカウント認証のメールを送信しました"
+      redirect_to("/")
     else
       render('users/new')
     end
@@ -85,6 +87,7 @@ class UsersController < ApplicationController
   
   def likes
     @user = User.find_by(id: params[:id])
+    redirect_to("/posts/index") and return unless @user.activated?
     @likes = Like.where(user_id: @user.id)
     @user_posts_count=Post.where(user_id: @user.id).count
     @user_likes_post_count=Like.where(user_id: @user.id).count
@@ -93,6 +96,7 @@ class UsersController < ApplicationController
 
   def comments
     @user = User.find_by(id: params[:id])
+    redirect_to("/posts/index") and return unless @user.activated?
     @comments = Comment.where(user_id: @user.id)
      @user_posts_count=Post.where(user_id: @user.id).count
     @user_likes_post_count=Like.where(user_id: @user.id).count

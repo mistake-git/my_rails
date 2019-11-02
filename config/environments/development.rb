@@ -65,4 +65,16 @@ Rails.application.configure do
 
   config.cache_classes = false
   config.reload_classes_only_on_change = false
+  
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  address: "smtp.gmail.com",
+  port:587, # 8025, 587 and 25 can also be used.
+  domain: "gmail.com",
+  authentication: "plain",
+  enable_starttls_auto: true,
+  user_name: "standerd.media1234@gmail.com",
+  password: "zqdpjaitehounvom"
+}
 end
