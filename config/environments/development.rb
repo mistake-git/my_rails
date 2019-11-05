@@ -65,4 +65,15 @@ Rails.application.configure do
 
   config.cache_classes = false
   config.reload_classes_only_on_change = false
+  
+  config.action_mailer.default_url_options = { protocol: 'https' , host:'787bbc86456d498e91a14641769de13c.vfs.cloud9.ap-northeast-1.amazonaws.com' }
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  port: 587,
+  address: 'smtp.gmail.com',
+  domain: 'gmail.com',
+  user_name: "standerd.media01234@gmail.com",
+  password: "zqdpjaitehounvom",
+}
 end

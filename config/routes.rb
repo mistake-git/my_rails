@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get    '/login_form' => 'sessions#new'
   post   '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
+  
+  resources :account_activations, only: [:edit]
 
   post 'likes/:post_id/create' => 'likes#create'
   post 'likes/:post_id/destroy' => 'likes#destroy'

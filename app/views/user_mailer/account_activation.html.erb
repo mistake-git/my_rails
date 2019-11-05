@@ -1,0 +1,9 @@
+<h5>アカウント認証</h5>
+
+<p><%= @user.name %>さん</p>
+
+<p>
+Standerd Mediaにようこそ!!下記のURLにアクセスしてアカウントを有効にしてください
+</p>
+
+<%= link_to "Activate", edit_account_activation_url(@token, email: @user.email) %>
