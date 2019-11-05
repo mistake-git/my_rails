@@ -40,7 +40,7 @@ class UsersController < ApplicationController
     )
     if @user.save
       @user.send_activation_email
-      UserMailer.account_activation(@user).deliver_now
+      # UserMailer.account_activation(@user).deliver_now
       flash[:notice] = "アカウント認証のメールを送信しました"
       redirect_to("/")
     else

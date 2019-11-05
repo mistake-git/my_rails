@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  attr_accessor :remember_token
   attr_accessor :remember_token, :activation_token
   before_save   :downcase_email
   before_create :create_activation_digest
@@ -72,7 +71,8 @@ class User < ApplicationRecord
     #update_columns(activated: FILL_IN, activated_at: FILL_IN)
   #end
   def send_activation_email
-    UserMailer.account_activation(@user).deliver_now
+    pp self.activation_token
+    UserMailer.account_activation(self, self.activation_token).deliver_now
   end
   
   private
@@ -82,6 +82,7 @@ class User < ApplicationRecord
     
     def create_activation_digest
       self.activation_token  = User.new_token
+      pp self.activation_token
       self.activation_digest = User.digest(activation_token)
     end
 
