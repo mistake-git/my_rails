@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
       post_id: params[:post_id]
     )
     if @comment.save
-      flash[:notice] = 'コメントを投稿しました'
+      flash[:success] = 'コメントを投稿しました'
       redirect_to("/posts/#{params[:post_id]}")
     else
       redirect_to("/posts/#{params[:post_id]}")
@@ -20,14 +20,14 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find_by(id: params[:comment_id])
     @comment.destroy
-    flash[:notice] = 'コメントを削除しました'
+    flash[:success] = 'コメントを削除しました'
     redirect_to("/posts/#{params[:post_id]}")
   end
 
   def ensure_correct_user
     @comment = Comment.find_by(id: params[:comment_id])
     if @comment.user_id != @current_user.id
-      flash[:notice] = '権限がありません'
+      flash[:danger] = '権限がありません'
       redirect_to("/posts/#{params[:post_id]}")
     end
   end

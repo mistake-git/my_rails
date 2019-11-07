@@ -1,5 +1,6 @@
+# frozen_string_literal: true
+
 class AccountActivationsController < ApplicationController
-  
   def edit
     user = User.find_by(email: params[:email])
     if user && !user.activated? && user.authenticated?(:activation, params[:id])
@@ -7,11 +8,11 @@ class AccountActivationsController < ApplicationController
       user.update_attribute(:activated_at, Time.zone.now)
       user.activate
       log_in user
-      flash[:notice] = "アカウントが有効になりました"
-      redirect_to("/posts/index")
+      flash[:success] = 'アカウントが有効になりました'
+      redirect_to('/posts/index')
     else
-      flash[:notice] = "リンクが無効です"
-      redirect_to("/")
+      flash[:danger] = 'リンクが無効です'
+      redirect_to('/')
     end
   end
 end

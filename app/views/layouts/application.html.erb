@@ -10,9 +10,15 @@
     　<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:700,400">
   </head>
   <body>
-    <%if flash[:notice]%>
-      <div class="flash">
-        <%=flash[:notice]%>
+    <%if flash[:success]%>
+      <div class="flash-sucsess">
+        <%=flash[:success]%>
+      </div>
+    <%end%>
+    
+      <%if flash[:danger]%>
+      <div class="flash-danger">
+        <%=flash[:danger]%>
       </div>
     <%end%>
     <%= render 'layouts/header' %>

@@ -1,11 +1,14 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'password_resets/new'
+  post 'password_resets/edit'
   get    '/login_form' => 'sessions#new'
   post   '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
-  
+
   resources :account_activations, only: [:edit]
+  resources :password_resets,     only: %i[new create edit update]
 
   post 'likes/:post_id/create' => 'likes#create'
   post 'likes/:post_id/destroy' => 'likes#destroy'
@@ -24,8 +27,7 @@ Rails.application.routes.draw do
   get 'users/:id/comments' => 'users#comments'
   delete '/users/:id/destroy' => 'users#destroy'
   get '/admin' => 'users#admin'
-  get '/password_reset_form' => 'users#password_reset_form'
-  
+
   get '/posts/index' => 'posts#index'
   get '/posts/search' => 'posts#search'
   get '/posts/new' => 'posts#new'
@@ -34,7 +36,7 @@ Rails.application.routes.draw do
   get '/posts/:id/edit' => 'posts#edit'
   patch '/posts/:id/update' => 'posts#update', as: 'posts_update'
   delete '/posts/:id/destroy' => 'posts#destroy'
- 
+
   get '/ranking' => 'ranking#ranking'
   get '/' => 'home#top'
   get 'about' => 'home#about'

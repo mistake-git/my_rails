@@ -8,7 +8,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.page(params[:page]).per(PER).order(created_at: :desc)
-    @user=@current_user
+    @user = @current_user
   end
 
   def search
@@ -36,7 +36,7 @@ class PostsController < ApplicationController
       image: params[:image]
     )
     if @post.save
-      flash[:notice] = '投稿を作成しました'
+      flash[:success] = '投稿を作成しました'
       redirect_to('/posts/index')
     else
       render('posts/new')
@@ -57,7 +57,7 @@ class PostsController < ApplicationController
         @post.image.purge
         @post.image.attach(params[:post][:image])
       end
-      flash[:notice] = '投稿を編集しました'
+      flash[:sucsess] = '投稿を編集しました'
       redirect_to("/posts/#{@post.id}")
     else
       render('posts/edit')
@@ -67,14 +67,14 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find_by(id: params[:id])
     @post.destroy
-    flash[:notice] = '投稿を削除しました'
+    flash[:success] = '投稿を削除しました'
     redirect_to('/posts/index')
   end
 
   def ensure_correct_user
     @post = Post.find_by(id: params[:id])
     if @post.user_id != @current_user.id
-      flash[:notice] = '権限がありません'
+      flash[:danger] = '権限がありません'
       redirect_to('/posts')
     end
   end
