@@ -78,5 +78,5 @@ gem 'jquery-rails'
 # メッセージ日本語化
 gem 'rails-i18n'
 
-#テスト
+# テスト
 gem 'rspec-rails'
