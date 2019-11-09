@@ -19,6 +19,5 @@
 
  $(function(){
   setTimeout("$('.flash').fadeOut('slow')", 10000) 
-  
  })
 

@@ -2,7 +2,7 @@
 
 Rails.application.routes.draw do
   get 'password_resets/new'
-  post 'password_resets/edit'
+  post 'password_resets/edit',as:"edit_password_reset_url"
   get    '/login_form' => 'sessions#new'
   post   '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
@@ -39,5 +39,4 @@ Rails.application.routes.draw do
 
   get '/ranking' => 'ranking#ranking'
   get '/' => 'home#top'
-  get 'about' => 'home#about'
 end

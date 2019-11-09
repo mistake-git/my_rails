@@ -1,6 +1,6 @@
 <h3 class="text-center mt-5">パスワードリセット</h3>
 <div class="container pb-5">
-  <%= form_tag(url: password_reset_path(params[:id])do %>
+  <%= form_tag("/password_resets/#{params[:id]}", method: :patch)do %>
   <div class="form-wrapper">
       <input name="email"  class="ignore-form"  value="<%= @user.email %>">
     <div class="form-group">

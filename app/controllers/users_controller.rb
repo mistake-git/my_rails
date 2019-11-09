@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   PER = 8
 
   def index
-    @users = User.where(activated: true).page(page: params[:page]).per(PER)
+   @users= User.where(activated: true).page(params[:page]).per(PER)
   end
 
   def search
@@ -51,7 +51,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(id: params[:id])
+    @user = User.find_by(id: params[:id])
     pp params
     if @user.update(
       name: params[:user][:name],
