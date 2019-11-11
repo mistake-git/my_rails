@@ -7,11 +7,7 @@ Rails.application.routes.draw do
   post   '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
   
-   resources :users do
-    member do
-      get :following, :followers
-    end
-  end
+
 
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: %i[new create edit update]
@@ -29,6 +25,8 @@ Rails.application.routes.draw do
   get 'signup' => 'users#new'
   get '/users/search' => 'users#search'
   get 'users/index' => 'users#index'
+  get '/users/following' => 'users#following'
+  get 'users/followers' =>'users#followers'
   get 'users/:id' => 'users#show', as: 'users_show'
   get 'users/:id/likes' => 'users#likes'
   get 'users/:id/comments' => 'users#comments'
@@ -36,9 +34,9 @@ Rails.application.routes.draw do
   get '/admin' => 'users#admin'
 
   get '/posts/index' => 'posts#index'
-  get '/posts/followers' => 'posts#followers'
   get '/posts/search' => 'posts#search'
   get '/posts/new' => 'posts#new'
+  get '/posts/following' => 'posts#following'
   post '/posts' => 'posts#create', as: 'posts_create'
   get '/posts/:id' => 'posts#show', as: 'posts_show'
   get '/posts/:id/edit' => 'posts#edit'
@@ -48,4 +46,6 @@ Rails.application.routes.draw do
 
   get '/ranking' => 'ranking#ranking'
   get '/' => 'home#top'
+  
+
 end

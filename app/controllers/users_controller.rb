@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   PER = 8
 
   def index
-  @title="ユーザー一覧"
+   @title="ユーザー一覧"
    @users= User.where(activated: true).page(params[:page]).per(PER)
   end
 
@@ -20,7 +20,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
-    # 投稿数、いいね数、コメント数
     redirect_to('/posts/index') && return unless @user.activated?
     @user_posts_count = Post.where(user_id: @user.id).count
     @user_likes_post_count = Like.where(user_id: @user.id).count
@@ -104,14 +103,14 @@ class UsersController < ApplicationController
   
   def following
     @title = "フォロー中"
-    @user  = User.find(params[:id])
-    @users = @user.following.paginate(page: params[:page])
+    @user  = User.find_by(params[:id])
+    @users = @user.following
   end
 
-  def followers
+  def following
     @title = "フォロワー"
-    @user  = User.find(params[:id])
-    @users = @user.followers.paginate(page: params[:page])
+    @user  = User.find_by(params[:id])
+    @users = @user.followers
   end
 
   def ensure_correct_user

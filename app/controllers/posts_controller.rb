@@ -80,8 +80,8 @@ class PostsController < ApplicationController
     end
   end
   
-  def followers
-    @title="フォロワーの投稿"
+  def following
+    @title="フォロー"
   end  
 
   private

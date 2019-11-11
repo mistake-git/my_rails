@@ -26,16 +26,6 @@ body{
   background-color: #F2F2F2;
 }
 
-.post-title{
-  color:black;
-}
-
-.post-user-img{
-  height: 70px;
-  width: 70px;
-  margin: 10px auto;
-}
-
 li{
   list-style:none
 }
@@ -107,6 +97,7 @@ nav{
 .nav-link-img{
   width: 40px;
   height: 40px;
+  border-radius: 50%;
 }
 
 /*フッター-----------------------------------------------------------*/
