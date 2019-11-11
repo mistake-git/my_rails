@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   PER = 8
 
   def index
+  @title="ユーザー一覧"
    @users= User.where(activated: true).page(params[:page]).per(PER)
   end
 
@@ -100,6 +101,18 @@ class UsersController < ApplicationController
     @user_likes_post_count = Like.where(user_id: @user.id).count
     @user_comments_count = Comment.where(user_id: @user.id).count
   end
+  
+  def following
+    @title = "フォロー中"
+    @user  = User.find(params[:id])
+    @users = @user.following.paginate(page: params[:page])
+  end
+
+  def followers
+    @title = "フォロワー"
+    @user  = User.find(params[:id])
+    @users = @user.followers.paginate(page: params[:page])
+  end
 
   def ensure_correct_user
     if @current_user.id != params[:id].to_i
@@ -113,4 +126,5 @@ class UsersController < ApplicationController
   end
 
   def password_reset_form; end
+    
 end

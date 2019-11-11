@@ -13,6 +13,31 @@
     <div class="profile-content user-introduce">
       <%= @user.introduce %>
     </div>
+    
+    <% @user ||= current_user %>
+      <%= @user.following.count %>
+  　 フォロー
+ 
+      <%= @user.followers.count %>
+ 　　 フォロワー
+ 　　 
+ 　　 <%unless @user.id==@current_user.id>
+ 　　 
+ 　　 <%unless Relationship.find_by(user_id: @current_user.id,followed_id: followed.id) %>
+ 　　 <%= form_with(current_user.active_relationships.build) do|form| %>
+      <%= hidden_field_tag :followed_id, @user.id %>
+       <%= form.submit "フォローする+", class: "btn btn-primary" %>
+      <% end %>
+      <%else%>
+      <%= form_with(current_user.active_relationships.find_by(followed_id: @user.id),
+           html: { method: :delete }) do |f| %>
+        <%= form.submit "フォローを外す-", class: "btn" %>
+       <% end %>
+       <%end%>
+       
+      <%end%>
+    
+    
     <%if @user.id==@current_user.id%>
       <div class="ml-1 mr-1">
         <%= link_to("編集", "/users/#{@user.id}/edit",class:"btn-sm btn-primary") %>
