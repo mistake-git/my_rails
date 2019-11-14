@@ -6,9 +6,12 @@ Rails.application.routes.draw do
   get    '/login_form' => 'sessions#new'
   post   '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
+  
+
 
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: %i[new create edit update]
+  resources :relationships,       only: [:create, :destroy]
 
   post 'likes/:post_id/create' => 'likes#create'
   post 'likes/:post_id/destroy' => 'likes#destroy'
@@ -22,6 +25,9 @@ Rails.application.routes.draw do
   get 'signup' => 'users#new'
   get '/users/search' => 'users#search'
   get 'users/index' => 'users#index'
+  get '/users/following' => 'users#following'
+  get 'users/followers' =>'users#followers'
+  get '/posts/following/post' => 'posts#following_post'
   get 'users/:id' => 'users#show', as: 'users_show'
   get 'users/:id/likes' => 'users#likes'
   get 'users/:id/comments' => 'users#comments'
@@ -36,7 +42,10 @@ Rails.application.routes.draw do
   get '/posts/:id/edit' => 'posts#edit'
   patch '/posts/:id/update' => 'posts#update', as: 'posts_update'
   delete '/posts/:id/destroy' => 'posts#destroy'
+  
 
   get '/ranking' => 'ranking#ranking'
   get '/' => 'home#top'
+  
+
 end

@@ -13,6 +13,43 @@
     <div class="profile-content user-introduce">
       <%= @user.introduce %>
     </div>
+    
+    <% @user ||= current_user %>
+
+    <div class="row no-gutters text-center mb-4">
+      <div class="col-4 offset-2">
+        <%=link_to("/users/following") do%>
+          <div class="badge badge-primary">
+            <%= @user.following.count %>
+          </div>
+          <div class="follow-text">フォロー</div>
+        <%end%>
+      </div>
+
+      <div class="col-4"> 
+       <%=link_to("/users/followers") do%>
+         <div class="badge badge-primary">
+         <%= @user.followers.count %>
+        </div> 
+       <div class="follow-text">フォロワー</div>
+       <%end%>
+      </div>
+    </div>
+    
+    <%if @user.id!=@current_user.id%>
+        <%if  Relationship.find_by(follower_id: @current_user.id,followed_id: @user.id) %>
+            <%= form_with(model: @current_user.active_relationships.find_by(followed_id: @user.id),local: true,html: { method: :delete }) do |form| %>
+                <%= form.submit "フォロー中-", class: "btn btn-primary" %>
+            <%end %>
+        <%else%>
+            <%= form_with(model: @current_user.active_relationships.build,local: true) do|form| %>
+                <%= hidden_field_tag :followed_id, @user.id %>
+                <%= form.submit "フォローする+", class: "btn btn-secondary" %>
+            <% end %>
+       <%end%>
+    <%end%>
+    
+    
     <%if @user.id==@current_user.id%>
       <div class="ml-1 mr-1">
         <%= link_to("編集", "/users/#{@user.id}/edit",class:"btn-sm btn-primary") %>

@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   PER = 8
 
   def index
+    @title="投稿一覧"
     @posts = Post.page(params[:page]).per(PER).order(created_at: :desc)
     @user = @current_user
   end
@@ -78,6 +79,11 @@ class PostsController < ApplicationController
       redirect_to('/posts')
     end
   end
+  
+  def following_post
+      @user = @current_user
+     @posts = @user.feed
+  end  
 
   private
 
