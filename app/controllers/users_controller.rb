@@ -102,13 +102,11 @@ class UsersController < ApplicationController
   end
   
   def following
-    @title = "フォロー中"
     @user  = User.find_by(params[:id])
     @users = @user.following
   end
 
-  def following
-    @title = "フォロワー"
+  def followers
     @user  = User.find_by(params[:id])
     @users = @user.followers
   end

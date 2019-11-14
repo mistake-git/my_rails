@@ -32,6 +32,9 @@
               <%@likes_count = Like.where(post_id: post.id).count%>
               <%= @likes_count %>
             </div>
+             <div class="comment-count">
+              <%= @comment_count %>
+            </div>
           </div>
           <%if post.image.attached?%>
             <div class="media-right mt-4 mr-5">

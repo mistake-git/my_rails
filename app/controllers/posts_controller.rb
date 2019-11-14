@@ -80,8 +80,9 @@ class PostsController < ApplicationController
     end
   end
   
-  def following
-    @title="フォロー"
+  def following_post
+      @user = @current_user
+     @posts = @user.feed
   end  
 
   private
