@@ -1,20 +1,2 @@
-<h3 class="text-center mt-5">フォロワー</h3>
-<ul class="media-list mx-auto">
-  <%@users.each do |user|%>
-    <li class="media">
-      <%if user.image.attached?%>
-        <div class="media-left">
-          <%=link_to(image_tag(user.image,class:"post-user-img"),"/users/#{user.id}")%>
-        </div>
-      <%end%>
-      <div class="media-body inner">
-        <div class="media-heading user-index-name">
-          <%=link_to(user.name,"/users/#{user.id}")%>
-        </div>
-        <div class="profile-user-introduce">
-          <%= user.introduce %>
-        </div>
-      </div>
-    </li>
-  <%end%>
-</ul>
+ <h3 class="text-center mt-5">フォロワー</h3>
+ <%= render partial: 'users_index'%>

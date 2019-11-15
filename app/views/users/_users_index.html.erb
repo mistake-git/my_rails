@@ -1,0 +1,41 @@
+<ul class="media-list mx-auto">
+  <%@users.each do |user|%>
+    <li class="media">
+      <%if user.image.attached?%>
+        <div class="media-left">
+          <%=link_to(image_tag(user.image,class:"post-user-img"),"/users/#{user.id}")%>
+        </div>
+      <%end%>
+      <div class="media-body inner">
+        <div class="media-heading user-index-name">
+          <%=link_to(user.name,"/users/#{user.id}")%>
+        </div>
+        <div class="profile-user-introduce">
+          <%= user.introduce %>
+        </div>
+        <div class="user-status">
+            <div class="user-status-item"><span>フォロー中</span>
+                <div class="badge badge-primary"><%= user.following.count%></div>
+            </div>    
+            <div class="user-status-item"><span>フォロワー</span>
+                 <div class="badge badge-primary"><%= user.followers.count%></div>
+            </div>
+        </div>
+      </div>
+      <div class="media-right mt-4 mr-4">
+        <%if user.id!=current_user.id%>
+            <%if  Relationship.find_by(follower_id: current_user.id,followed_id: user.id) %>
+              <%= form_with(model: current_user.active_relationships.find_by(followed_id: user.id),local: true,html: { method: :delete }) do |form| %>
+                <%= form.submit "フォロー中", class: "btn-sm btn-primary" %>
+              <%end %>
+        <%else%>
+            <%= form_with(model: current_user.active_relationships.build,local: true) do|form| %>
+                <%= hidden_field_tag :followed_id, user.id %>
+                <%= form.submit "フォローする+", class: "btn-sm btn-secondary" %>
+              <% end %>
+           <%end%>
+        <%end%>
+      </div>
+    </li>
+  <%end%>
+</ul>

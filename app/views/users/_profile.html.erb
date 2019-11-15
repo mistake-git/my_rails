@@ -15,7 +15,6 @@
     </div>
     
     <% @user ||= current_user %>
-
     <div class="row no-gutters text-center mb-4">
       <div class="col-4 offset-2">
         <%=link_to("/users/following") do%>
@@ -39,7 +38,7 @@
     <%if @user.id!=@current_user.id%>
         <%if  Relationship.find_by(follower_id: @current_user.id,followed_id: @user.id) %>
             <%= form_with(model: @current_user.active_relationships.find_by(followed_id: @user.id),local: true,html: { method: :delete }) do |form| %>
-                <%= form.submit "フォロー中-", class: "btn btn-primary" %>
+                <%= form.submit "フォロー中", class: "btn btn-primary" %>
             <%end %>
         <%else%>
             <%= form_with(model: @current_user.active_relationships.build,local: true) do|form| %>

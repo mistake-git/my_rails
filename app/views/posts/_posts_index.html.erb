@@ -1,17 +1,4 @@
-
-  <h3 class="text-center mt-5"><%=@title%></h3>
-  <div class="mt-3 mb-3">
-    <%= form_tag("/posts/search",:method => "get") do %>
-      <div class="form-group search-item search-item-form">
-        <%= text_field_tag :search ,"" ,{class: "form-control"}%>
-      </div>
-      <div class="search-item">
-        <%= submit_tag "検索", :name => nil ,class:"btn-sm btn-info search-btn"%>
-      </div>
-    <% end %>
-  </div>
-  
-    <ul class="media-list mx-auto">
+   <ul class="media-list mx-auto">
       <% @posts.each do |post| %>
         <li class="media">
           <%if post.user.image.attached?%>
@@ -32,8 +19,10 @@
               <%@likes_count = Like.where(post_id: post.id).count%>
               <%= @likes_count %>
             </div>
-             <div class="comment-count">
-              <%= @comment_count %>
+             <span class="fas fa-comment comment-icon"></span>
+             <div class="comments-count">
+              <%@comments_count = Comment.where(post_id: post.id).count%>
+              <%= @comments_count %>
             </div>
           </div>
           <%if post.image.attached?%>
@@ -45,6 +34,4 @@
       <%end%>
     </ul>
 
-    <div class="pagenation text-center">
-    <%= paginate @posts %>
-    </div>
+ 
