@@ -1,2 +1,15 @@
-<%= render partial: 'posts_index'%>
-    
+ <h3 class="text-center mt-5"><%=@title%></h3>
+  <div class="mt-3 mb-3">
+    <%= form_tag("/posts/search",:method => "get") do %>
+      <div class="form-group search-item search-item-form">
+        <%= text_field_tag :search ,"" ,{class: "form-control"}%>
+      </div>
+      <div class="search-item">
+        <%= submit_tag "検索", :name => nil ,class:"btn-sm btn-info search-btn"%>
+      </div>
+    <% end %>
+  </div>
+  <%= render partial: 'posts_index'%>
+  <div class="pagenation text-center">
+    <%= paginate @posts %>
+  </div>

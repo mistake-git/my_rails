@@ -45,7 +45,7 @@ Rails.application.routes.draw do
   
 
   get '/ranking' => 'ranking#ranking'
-  get '/' => 'home#top'
+  get '/' => 'home#top',as: 'root'
   
 
 end
