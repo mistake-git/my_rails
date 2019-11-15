@@ -20,11 +20,11 @@
       <div class="flash flash-danger">
         <%=flash[:danger]%>
       </div>
-    <%end%>
-    <%= render 'layouts/header' %>
-    <div class='main'>
-      <%= yield %>
-    </div>
+      <%end%>
+      <%= render 'layouts/header' %>
+      <div class='main'>
+       <%= yield %>
+     </div>
     <%= render 'layouts/footer' %>
   </body>
 </html>

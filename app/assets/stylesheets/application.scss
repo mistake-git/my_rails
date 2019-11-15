@@ -104,6 +104,11 @@ nav{
 footer{
     color: white;
     background-color: #003366;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    text-align:center;
 }
 
 /*フォーム------------------------------------------------------------*/
@@ -157,39 +162,4 @@ form{
 /*投稿-------------------------------------------------------------------*/
 
 
-.post{
-  margin: 50px 200px 0;
-  background-color: white;
-  border-bottom: 1px solid #66FFFF;
-  border-radius: 10px;
-  &:hover{
-    transform: translateY(-2px);
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
-  }
-}
 
-
-.created_at,.likes-count{
-  display: inline;
-  opacity: 0.6;
-}
-
-
-.media-list{
-    width: 80%;
-}
-
-.media{
-  border-bottom:1px solid #66FFFF;
-  background-color: white;
-  border-radius: 10px;
-  &:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
-  }
-}
-
-.media-post-image{
-  width:70px;
-  height:70px;
-}
