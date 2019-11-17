@@ -104,8 +104,6 @@ nav{
 footer{
     color: white;
     background-color: #003366;
-    position: absolute;
-    bottom: 0;
     width: 100%;
     height: 60px;
     text-align:center;
@@ -125,10 +123,7 @@ form{
 /*検索フォーム---------------------------------------------------------*/
 .search-item{
   display: inline-block;
-}
-
-.search-btn{
-  margin-left: -200px;
+  margin-left: -9%;
 }
 
 .search-item-form{
@@ -159,7 +154,6 @@ form{
  opacity:0.4;
 }
 
-/*投稿-------------------------------------------------------------------*/
 
 
 
