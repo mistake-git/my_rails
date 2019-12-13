@@ -5,6 +5,10 @@
         <div class="media-left">
           <%=link_to(image_tag(user.image,class:"post-user-img"),"/users/#{user.id}")%>
         </div>
+      <% else %>
+        <div class="media-left">
+         <img src="../assets/user-image.png" class="post-user-img">
+        </div>
       <%end%>
       <div class="media-body inner">
         <div class="media-heading user-index-name">

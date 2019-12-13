@@ -3,6 +3,10 @@
       <div class="profile-image">
         <%= image_tag @user.image,class:"profile-image" %>
       </div>
+    <% else %>
+      <div class="profile-image">
+         <img src="../assets/user-image.png" class="profile-image">
+      </div>
     <%end%>
     <div class="profile-content user-name">
       <h4><%= @user.name %></h4>

@@ -4,6 +4,8 @@
   <div class="post-left">
     <%if @user.image.attached?%>
       <%= image_tag @user.image, class:"post-user-img"%>
+    <% else %>
+      <img src="../assets/user-image.png" class="post-user-img">
     <% end %>
     <div class="post-left-item">
       <%= link_to(@user.name, "/users/#{@user.id}") %>

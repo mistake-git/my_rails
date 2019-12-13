@@ -19,7 +19,7 @@
   </ul>
   <ul class="media-list profile-media mx-auto">
     <% @likes.each do |like| %>
-      <%post=Post.find_by(id: like.post_id)%>
+      <% post=Post.find_by(id: like.post_id)%>
       <li class="media">
         <%if post.user.image.attached?%>
           <div class="media-left">
@@ -40,11 +40,15 @@
             <%= @likes_count %>
           </div>
         </div>
-        <%if post.image.attached?%>
+        <% if post.image.attached?%>
           <div class="media-right mt-4 mr-5">
             <%= image_tag post.image,class:"post-media-img"%>
           </div>
-        <%end%>
+        <% else %>
+          <div class="media-right mt-4 mr-5">
+              <img src="../assets/user-image.png" class="post-user-img">
+          </div>
+        <% end %>
       </li>
     <% end %>
   </ul>
