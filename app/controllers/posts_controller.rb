@@ -81,7 +81,7 @@ class PostsController < ApplicationController
   end
   
   def following_post
-      @user = @current_user
+     @user = @current_user
      @posts = @user.feed
   end  
 

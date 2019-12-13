@@ -28,11 +28,8 @@ Active strage
 font awesome
 以上です。よろしくお願いいたします。
 
-***
-データベースデプロイに関して
-my SQLにする
-インフラはherokuではなくAWSにする
-(単体テスト)
-(統合テスト)
+フッターの位置を直したい
+
+following_post_userが何故かルーティングエラーになってる
 
 
